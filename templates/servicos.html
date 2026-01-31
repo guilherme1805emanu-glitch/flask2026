@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>
+    Serviços:
+</h2>
+
+<ul>
+    {% for servico in servicos %}
+        <li>
+            {{ servico["name"] }}
+        </li>
+    {% endfor %}
+</ul>
+
+<table class="table table-dark table-striped-columns"   >
+    <thead>
+        <tr>
+            <th>
+                nome
+            </th>
+            <th>
+                preço
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for servico in servicos %}
+            <tr>
+                <td>{{ servico ["name"] }}</td>
+                <td>{{servico ["price"] }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}
